@@ -1,0 +1,53 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #fff;
+}
+
+body, html {
+    height: 100%;
+}
+
+.container-chart, .container-stock {
+    height: 600px;
+    min-height: 600px;
+}
+
+.nav-panel {
+    font-size: 0;
+    display: table;
+}
+
+.nav-panel.list-nav {
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.nav-panel.list-nav > li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom:10px;
+}
+
+.nav-panel.list-nav > li h5 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-panel.list-nav {
+        display: block;
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    .nav-panel.list-nav > li {
+        display: block;
+        margin-right: 0;
+    }
+
+    .nav-panel.list-nav > li .bootstrap-select.select {
+        width: 100%;
+    }
+}
