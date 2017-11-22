@@ -17,10 +17,10 @@ function create_column_stock(palette) {
 
   var chart = anychart.stock();
   var plot1 = chart.plot(0);
-  plot1.column(mapping).name('Column');
+  plot1.column(mapping).name('ACME');
 
   var plot2 = chart.plot(1);
-  plot2.rangeColumn(mapping).name('Range Column');
+  plot2.rangeColumn(mapping).name('ACME');
   chart.scroller().column(scrollMapping);
   chart.selectRange('2007-04-01', '2008-08-28');
 
@@ -49,11 +49,11 @@ function create_line_stock(palette) {
   plot1.xGrid(true)
       .xMinorGrid(true);
 
-  plot1.marker(dataSet1).name('Marker');
-  plot1.line(dataSet2).name('Line');
+  plot1.marker(dataSet1).name('MSFT');
+  plot1.line(dataSet2).name('ACME');
 
   var plot2 = chart.plot(1);
-  plot2.spline(dataSet3).name('Spline');
+  plot2.spline(dataSet3).name('ACME');
   plot2.xAxis().background().enabled(true);
   plot2.xGrid(true)
       .xMinorGrid(true);
@@ -84,10 +84,10 @@ function create_ohlc_stock(palette) {
 
   var chart = anychart.stock();
   var plot1 = chart.plot(0);
-  plot1.ohlc(mapping).name('OHLC');
+  plot1.ohlc(mapping).name('CSCO');
 
   var plot2 = chart.plot(1);
-  plot2.candlestick(mapping).name('Candlestick');
+  plot2.candlestick(mapping).name('CSCO');
   chart.scroller().candlestick(mapping);
   chart.selectRange('2007-04-01', '2008-08-28');
 
@@ -114,13 +114,13 @@ function create_area_stock(palette) {
 
   var chart = anychart.stock();
   var plot1 = chart.plot(0);
-  plot1.area(mapping).name('Area');
+  plot1.area(mapping).name('MSFT');
 
   var plot2 = chart.plot(1);
-  plot2.rangeArea(mapping).name('Range Area');
+  plot2.rangeArea(mapping).name('MSFT');
 
   var plot3 = chart.plot(2);
-  plot3.stepArea(mapping).name('Step Area');
+  plot3.stepArea(mapping).name('MSFT');
 
   chart.scroller().stepArea(scrollMapping);
   chart.selectRange('2007-04-01', '2008-08-28');
