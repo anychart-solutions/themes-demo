@@ -248,7 +248,7 @@ function create_bubble_chart(palette) {
         .useHtml(true)
         .fontColor('#fff')
         .format(tooltipFormatter);
-    // create forth series with mapped data
+    // create fourth series with mapped data
     series = chart.bubble(sportsmen4);
     series.name('Daniel Williamson');
     series.tooltip()
@@ -517,7 +517,7 @@ function create_choropleth_map(palette) {
     chart.choropleth(dataSet_austria_map_1.filter('series', filterConstructor('1'))).name('First');
     chart.choropleth(dataSet_austria_map_1.filter('series', filterConstructor('2'))).name('Second');
     chart.choropleth(dataSet_austria_map_1.filter('series', filterConstructor('3'))).name('Third');
-    chart.choropleth(dataSet_austria_map_1.filter('series', filterConstructor('4'))).name('Forth');
+    chart.choropleth(dataSet_austria_map_1.filter('series', filterConstructor('4'))).name('Fourth');
     chart.legend().enabled(true);
     return chart;
 }
