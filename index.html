@@ -81,14 +81,21 @@
             <h5>Charts</h5>
             <select id="chart-types-select" class="select selectpicker show-tick">
                 <option value="bar-column" selected="selected">Bar & Column Charts</option>
+                <option value="3dBar-3dColumn">3D Bar & 3D Column Charts</option>
                 <option value="pie-donut">Pie & Donut Charts</option>
+                <option value="3dPie-3dArea">3D Pie & 3D Area Charts</option>
                 <option value="line-area">Line & Area Charts</option>
                 <option value="marker-bubble">Marker & Bubble Charts</option>
-                <option value="radar-polar">Radar (Spiderweb) & Polar Charts</option>
+                <option value="radar-polar">Radar & Polar Charts</option>
                 <option value="bullet-sparkline">Bullet & Sparkline Charts</option>
                 <option value="treemap-heatmap">Treemap & Heatmap Charts</option>
-                <option value="stock-line-column">Stock Line & Column</option>
-                <option value="stock-ohlc-area">Stock OHLC & Area</option>
+                <option value="error-box">Error & Box Charts</option>
+                <option value="pyramid-funnel">Pyramid & Funnel Charts</option>
+                <option value="polarMarker-radarArea">Radar Area & Polar Marker Charts</option>
+                <option value="choropleth-choroplethRange">Choropleth & Choropleth Range Maps</option>
+                <option value="bubbleMarkers-connector">Bubble Markers & Connector Maps</option>
+                <option value="stock-line-column">Stock Column & Range Column & Line & Marker</option>
+                <option value="stock-ohlc-area">Stock OHLC & Candlestick & Area & Range Area</option>
             </select>
         </li>
     </ul>
@@ -107,6 +114,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- Latest compiled and minified JavaScript Bootstrap Select -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
 
 <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-bundle.min.js"></script>
 

@@ -54,6 +54,34 @@ function updateCharts(palette, chartTypes, seriesCount) {
         chart1 = create_tree_map(palette).container(stage1).draw();
         chart2 = create_heat_map(palette).container(stage2).draw();
     }
+    else if (chartTypes == 'error-box') {
+        chart1 = create_error_chart(palette).container(stage1).draw();
+        chart2 = create_box_chart(palette).container(stage2).draw();
+    }
+    else if (chartTypes == 'pyramid-funnel') {
+        chart1 = create_pyramid_chart(palette).container(stage1).draw();
+        chart2 = create_funnel_chart(palette).container(stage2).draw();
+    }
+    else if (chartTypes == '3dBar-3dColumn') {
+        chart1 = create_3D_bar_chart(palette).container(stage1).draw();
+        chart2 = create_3D_column_chart(palette).container(stage2).draw();
+    }
+    else if (chartTypes == '3dPie-3dArea') {
+        chart1 = create_3D_pie_chart(palette).container(stage1).draw();
+        chart2 = create_3D_area_chart(palette).container(stage2).draw();
+    }
+    else if (chartTypes == 'polarMarker-radarArea') {
+        chart1 = create_radar_area_chart(palette).container(stage1).draw();
+        chart2 = create_polar_marker_chart(palette).container(stage2).draw();
+    }
+    else if (chartTypes == 'choropleth-choroplethRange') {
+        chart1 = create_choropleth_map(palette).container(stage1).draw();
+        chart2 = create_choropleth_range_map(palette).container(stage2).draw();
+    }
+    else if (chartTypes == 'bubbleMarkers-connector') {
+        chart1 = create_bubble_markers_map(palette).container(stage1).draw();
+        chart2 = create_connector_map(palette).container(stage2).draw();
+    }
     else {
         showStockCharts(true);
         if (chartTypes == 'stock-line-column') {
