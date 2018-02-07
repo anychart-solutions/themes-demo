@@ -38,8 +38,7 @@ function create_line_stock(palette) {
     var dataTable = anychart.data.table();
     dataTable.addData(get_ixic_daily_short_data());
     var dataSet1 = dataTable.mapAs({'value': 2});
-    var dataSet2 = dataTable.mapAs({'value': 3});
-    var dataSet3 = dataTable.mapAs({'value': 4});
+    var dataSet2 = dataTable.mapAs({'value': 4});
     var scrollMapping = dataTable.mapAs();
     scrollMapping.addField('value', 5);
 
@@ -52,7 +51,7 @@ function create_line_stock(palette) {
     plot1.line(dataSet1).name('MSFT');
 
     var plot2 = chart.plot(1);
-    plot2.marker(dataSet3).name('ACME');
+    plot2.marker(dataSet2).name('ACME');
     plot2.xAxis().background().enabled(true);
     plot2.xGrid(true)
         .xMinorGrid(true);
