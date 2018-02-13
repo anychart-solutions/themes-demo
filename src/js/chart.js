@@ -59,9 +59,6 @@ function create_bar_chart(palette) {
     if (palette) chart.palette(palette);
     chart.bar(data_set_5.mapAs({x: [0], value: [1]}));
     chart.interactivity().hoverMode('by-x');
-    chart.getSeriesAt(0).hovered()
-        .fill('orange')
-        .stroke('#EF6C00');
     var tooltip = chart.tooltip();
     tooltip.positionMode('point');
     tooltip.titleFormat(function () {
@@ -220,9 +217,9 @@ function create_bubble_chart(palette) {
 
     var tooltipFormatter = function (data) {
         return data.getData('data') + '<br/>' +
-            'Power: <span style="color: #d2d2d2; font-size: 12px">' + data.getData('value') + '</span></strong><br/>' +
-            'Pulse: <span style="color: #d2d2d2; font-size: 12px">' + data.getData('x') + '</span></strong><br/>' +
-            'Duration: <span style="color: #d2d2d2; font-size: 12px">' + data.getData('size') + ' min.</span></strong>';
+            'Power: <span style="font-size: 12px">' + data.getData('value') + '</span></strong><br/>' +
+            'Pulse: <span style="font-size: 12px">' + data.getData('x') + '</span></strong><br/>' +
+            'Duration: <span style="font-size: 12px">' + data.getData('size') + ' min.</span></strong>';
     };
 
     var series;
@@ -232,28 +229,24 @@ function create_bubble_chart(palette) {
     series.name('Christopher Sanchez');
     series.tooltip()
         .useHtml(true)
-        .fontColor('#fff')
         .format(tooltipFormatter);
     // create second series with mapped data
     series = chart.bubble(sportsmen2);
     series.name('Judy Evans');
     series.tooltip()
         .useHtml(true)
-        .fontColor('#fff')
         .format(tooltipFormatter);
     // create third series with mapped data
     series = chart.bubble(sportsmen3);
     series.name('Walter Burke');
     series.tooltip()
         .useHtml(true)
-        .fontColor('#fff')
         .format(tooltipFormatter);
     // create fourth series with mapped data
     series = chart.bubble(sportsmen4);
     series.name('Daniel Williamson');
     series.tooltip()
         .useHtml(true)
-        .fontColor('#fff')
         .format(tooltipFormatter);
 
     function training_filter_constructor(val) {
@@ -309,8 +302,8 @@ function create_marker_chart(palette) {
 
     var tooltipFormatter = function (data) {
         return data.getData('data') + '<br/>' +
-            'Power: <span style="color: #d2d2d2; font-size: 12px">' + data.getData('value') + '</span></strong><br/>' +
-            'Pulse: <span style="color: #d2d2d2; font-size: 12px">' + data.getData('x') + '</span></strong>';
+            'Power: <span style="font-size: 12px">' + data.getData('value') + '</span></strong><br/>' +
+            'Pulse: <span style="font-size: 12px">' + data.getData('x') + '</span></strong>';
     };
 
     var data = [
@@ -375,7 +368,6 @@ function create_marker_chart(palette) {
         series.name(name);
         series.tooltip()
             .useHtml(true)
-            .fontColor('#fff')
             .format(tooltipFormatter);
     }
 
@@ -591,10 +583,9 @@ function create_sparkline_chart() {
     table.hAlign('center');
     table.vAlign('middle');
     table.fontSize('12px');
-    table.fontFamily(fontFamilyText);
 
     // set fixed height for the first row
-    table.getRow(0).height(40).fontColor(headerFontColor);
+    table.getRow(0).height(40);
 
     // set fixed width for some of the tables columns
     table.getCol(0).width(90).hAlign('left');
@@ -711,18 +702,11 @@ function create_heat_map(palette) {
     // Creates Heat Map
     chart = anychart.heatMap(data_15());
 
-    // Sets chart settings and hover chart settings
-    chart.stroke('#fff');
-    chart.hovered()
-        .stroke('6 #fff')
-        .fill('#545f69');
-    chart.hovered().labels().fontColor('#fff');
-
     // Sets selection mode for single selection
     chart.interactivity().selectionMode('none');
 
     // Sets title
-    chart.title().enabled(true).text('Risk Matrix in Project Server').padding([0, 0, 20, 0]);
+    chart.title().enabled(true).text('Risk Matrix in Project Server');
 
     // Sets adjust chart labels
     var labels = chart.labels();
@@ -735,13 +719,6 @@ function create_heat_map(palette) {
         return namesList[this.heat];
     });
 
-    // Sets Axes
-    chart.yAxis().stroke(null).labels().padding([0, 15, 0, 0]);
-    chart.yAxis().ticks(false);
-    chart.xAxis()
-        .stroke(null)
-        .ticks(false);
-
     // Sets Tooltip
     chart.tooltip().title().useHtml(true);
     chart.tooltip().useHtml(true)
@@ -749,8 +726,8 @@ function create_heat_map(palette) {
             return '<b>' + namesList[this.heat] + '</b> Residual Risk';
         })
         .format(function () {
-            return '<span style="color: #CECECE">Likelihood: </span>' + this.x + '<br/>' +
-                '<span style="color: #CECECE">Consequence: </span>' + this.y;
+            return '<span>Likelihood: </span>' + this.x + '<br/>' +
+                '<span>Consequence: </span>' + this.y;
         });
 
     return chart;
@@ -780,9 +757,9 @@ function create_tree_map(palette) {
     var tooltip = chart.tooltip();
     tooltip.useHtml(true).format(function () {
         if (this.getData('city'))
-            return '<span style="color: #bfbfbf">Revenue: ' + '</span>$' + parseInt(this.value).toLocaleString() + '<br/>' +
-                '<span style="color: #bfbfbf">City: ' + '</span>' + this.getData('city');
-        return '<span style="color: #bfbfbf">Revenue: ' + '</span>$' + parseInt(this.value).toLocaleString();
+            return '<span>Revenue: ' + '</span>$' + parseInt(this.value).toLocaleString() + '<br/>' +
+                '<span>City: ' + '</span>' + this.getData('city');
+        return '<span>Revenue: ' + '</span>$' + parseInt(this.value).toLocaleString();
     });
 
     return chart;
