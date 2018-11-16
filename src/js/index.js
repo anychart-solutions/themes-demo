@@ -3,6 +3,10 @@ var chart1, chart2, stock1, stock2;
 var stage1, stage2, stage3, stage4, stage5, stage6;
 var isStock = false;
 
+function hidePreloader() {
+	$('#loader').fadeOut('slow');
+}
+
 function disposeCharts() {
     if (chart1) chart1.dispose();
     if (chart2) chart2.dispose();
@@ -168,5 +172,9 @@ $(function () {
             currentPalette = palette;
         }
     });
+});
+
+$(window).on('load', function () {
+	hidePreloader();
 });
 
