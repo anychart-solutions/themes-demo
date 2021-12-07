@@ -1,169 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>Themes</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Themes</title>
 
-	<!-- Normalize CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-	<!-- AnyChart UI -->
-	<link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css">
-	<link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css">
+  <!-- AnyChart UI -->
+  <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css">
+  <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css">
 
-	<!-- Latest compiled and minified CSS Bootstrap Select -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+  <!-- Latest compiled and minified CSS Bootstrap Select -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"/>
 
-	<!-- css -->
-	<link rel="stylesheet" href="src/css/style.css">
+  <!-- css -->
+  <link rel="stylesheet" href="src/css/style.css">
 
-	<!-- Include all your css files or styles here as needed -->
+  <!-- Include all your css files or styles here as needed -->
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
-
 <body>
-	<!-- anychart loader -->
-	<div id="loader" class="anychart-loader">
-		<div class="rotating-cover">
-			<div class="rotating-plane">
-				<div class="chart-row">
-					<span class="chart-col green"></span>
-					<span class="chart-col orange"></span>
-					<span class="chart-col red"></span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- -->
+<div class="container-fluid">
+  <ul class="list list-unstyled list-nav nav-panel">
+    <li>
+      <h5>Theme</h5>
+      <select id="themes-select" class="select selectpicker show-tick">
+        <option value="defaultTheme|defaultPalette">Default</option>
+        <option value="darkBlue|blue" data-palette-value="blue">Dark Blue</option>
+        <option value="lightBlue|blue" selected="selected">Light Blue</option>
+        <option value="darkEarth|earth">Dark Earth</option>
+        <option value="lightEarth|earth">Light Earth</option>
+        <option value="darkGlamour|glamour">Dark Glamour</option>
+        <option value="lightGlamour|glamour">Light Glamour</option>
+        <option value="darkProvence|provence">Dark Provence</option>
+        <option value="lightProvence|provence">Light Provence</option>
+        <option value="darkTurquoise|turquoise">Dark Turquoise</option>
+        <option value="lightTurquoise|turquoise">Light Turquoise</option>
+        <option value="coffee|coffee">Coffee</option>
+        <option value="monochrome|monochrome">Monochrome</option>
+        <option value="morning|morning">Morning</option>
+        <option value="pastel|pastel">Pastel</option>
+        <option value="sea|sea">Sea</option>
+        <option value="wines|wines">Wines</option>
+      </select>
+    </li>
 
-	<div>
-		<ul class="list list-unstyled list-nav nav-panel">
-			<li>
-				<h5>Theme</h5>
-				<select id="themes-select" class="select selectpicker show-tick">
-					<option value="defaultTheme|defaultPalette">Default</option>
-					<option value="darkBlue|blue" data-palette-value="blue">Dark Blue</option>
-					<option value="lightBlue|blue" selected="selected">Light Blue</option>
-					<option value="darkEarth|earth">Dark Earth</option>
-					<option value="lightEarth|earth">Light Earth</option>
-					<option value="darkGlamour|glamour">Dark Glamour</option>
-					<option value="lightGlamour|glamour">Light Glamour</option>
-					<option value="darkProvence|provence">Dark Provence</option>
-					<option value="lightProvence|provence">Light Provence</option>
-					<option value="darkTurquoise|turquoise">Dark Turquoise</option>
-					<option value="lightTurquoise|turquoise">Light Turquoise</option>
-					<option value="coffee|coffee">Coffee</option>
-					<option value="monochrome|monochrome">Monochrome</option>
-					<option value="morning|morning">Morning</option>
-					<option value="pastel|pastel">Pastel</option>
-					<option value="sea|sea">Sea</option>
-					<option value="wines|wines">Wines</option>
-				</select>
-			</li>
+    <li>
+      <h5>Palette</h5>
+      <select id="palettes-select" class="select selectpicker show-tick">
+        <option value="defaultPalette">Default</option>
+        <option value="blue" selected="selected">Blue</option>
+        <option value="earth">Earth</option>
+        <option value="glamour">Glamour</option>
+        <option value="provence">Provence</option>
+        <option value="turquoise">Turquoise</option>
+        <option value="coffee">Coffee</option>
+        <option value="monochrome">Monochrome</option>
+        <option value="morning">Morning</option>
+        <option value="pastel">Pastel</option>
+        <option value="sea">Sea</option>
+        <option value="wines">Wines</option>
+      </select>
+    </li>
 
-			<li>
-				<h5>Palette</h5>
-				<select id="palettes-select" class="select selectpicker show-tick">
-					<option value="defaultPalette">Default</option>
-					<option value="blue" selected="selected">Blue</option>
-					<option value="earth">Earth</option>
-					<option value="glamour">Glamour</option>
-					<option value="provence">Provence</option>
-					<option value="turquoise">Turquoise</option>
-					<option value="coffee">Coffee</option>
-					<option value="monochrome">Monochrome</option>
-					<option value="morning">Morning</option>
-					<option value="pastel">Pastel</option>
-					<option value="sea">Sea</option>
-					<option value="wines">Wines</option>
-				</select>
-			</li>
+    <li>
+      <h5>Charts</h5>
+      <select id="chart-types-select" class="select selectpicker show-tick">
+        <option value="bar-column" selected="selected">Bar & Column Charts</option>
+        <option value="3dBar-3dColumn">3D Bar & 3D Column Charts</option>
+        <option value="pie-donut">Pie & Donut Charts</option>
+        <option value="3dPie-3dArea">3D Pie & 3D Area Charts</option>
+        <option value="line-area">Line & Area Charts</option>
+        <option value="marker-bubble">Marker & Bubble Charts</option>
+        <option value="radar-polar">Radar & Polar Charts</option>
+        <option value="bullet-sparkline">Bullet & Sparkline Charts</option>
+        <option value="treemap-heatmap">Treemap & Heatmap Charts</option>
+        <option value="error-box">Error & Box Charts</option>
+        <option value="pyramid-funnel">Pyramid & Funnel Charts</option>
+        <option value="polarMarker-radarArea">Radar Area & Polar Marker Charts</option>
+        <option value="choropleth-choroplethRange">Choropleth & Choropleth Range Maps</option>
+        <option value="bubbleMarkers-connector">Bubble Markers & Connector Maps</option>
+        <option value="stock-line-column">Stock Column & Range Column & Line & Marker</option>
+        <option value="stock-ohlc-area">Stock OHLC & Candlestick & Area & Range Area</option>
+      </select>
+    </li>
+  </ul>
 
-			<li>
-				<h5>Charts</h5>
-				<select id="chart-types-select" class="select selectpicker show-tick">
-					<option value="bar-column" selected="selected">Bar & Column Charts</option>
-					<option value="3dBar-3dColumn">3D Bar & 3D Column Charts</option>
-					<option value="pie-donut">Pie & Donut Charts</option>
-					<option value="3dPie-3dArea">3D Pie & 3D Area Charts</option>
-					<option value="line-area">Line & Area Charts</option>
-					<option value="marker-bubble">Marker & Bubble Charts</option>
-					<option value="radar-polar">Radar & Polar Charts</option>
-					<option value="bullet-sparkline">Bullet & Sparkline Charts</option>
-					<option value="treemap-heatmap">Treemap & Heatmap Charts</option>
-					<option value="error-box">Error & Box Charts</option>
-					<option value="pyramid-funnel">Pyramid & Funnel Charts</option>
-					<option value="polarMarker-radarArea">Radar Area & Polar Marker Charts</option>
-					<option value="choropleth-choroplethRange">Choropleth & Choropleth Range Maps</option>
-					<option value="bubbleMarkers-connector">Bubble Markers & Connector Maps</option>
-					<option value="stock-line-column">Stock Column & Range Column & Line & Marker</option>
-					<option value="stock-ohlc-area">Stock OHLC & Candlestick & Area & Range Area</option>
-				</select>
-			</li>
-		</ul>
+  <div class="row">
+    <div class="col-md-6 container-chart" id="container-chart-1"></div>
+    <div class="col-md-6 container-chart" id="container-chart-2"></div>
+    <div class="col-md-6 container-stock" id="container-stock-1"></div>
+    <div class="col-md-6 container-stock" id="container-stock-2"></div>
+  </div>
+</div>
 
-		<div class="row">
-			<div class="col-md-6 container-chart" id="container-chart-1"></div>
-			<div class="col-md-6 container-chart" id="container-chart-2"></div>
-			<div class="col-md-6 container-stock" id="container-stock-1"></div>
-			<div class="col-md-6 container-stock" id="container-stock-2"></div>
-		</div>
-	</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified JavaScript Bootstrap Select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- Latest compiled and minified JavaScript Bootstrap Select -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/js/anychart-bundle.min.js"></script>
 
-	<script src="https://cdn.anychart.com/releases/v8/js/anychart-bundle.min.js"></script>
+<!-- AnyChart Themes -->
+<script src="https://cdn.anychart.com/releases/v8/themes/light_blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/coffee.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/dark_blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/dark_earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/dark_glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/dark_provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/dark_turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/light_earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/light_glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/light_provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/light_turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/monochrome.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/morning.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/pastel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/sea.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/themes/wines.min.js"></script>
+<!---->
 
-	<!-- AnyChart Themes -->
-	<script src="https://cdn.anychart.com/releases/v8/themes/coffee.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/dark_blue.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/dark_earth.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/dark_glamour.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/dark_provence.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/dark_turquoise.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/light_blue.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/light_earth.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/light_glamour.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/light_provence.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/light_turquoise.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/monochrome.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/morning.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/pastel.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/sea.min.js"></script>
-	<script src="https://cdn.anychart.com/releases/v8/themes/wines.min.js"></script>
-	<!---->
-
-	<!-- samples js -->
-	<script src="src/js/austria.js"></script>
-	<script src="src/js/ixic-daily-short.js"></script>
-	<script src="src/js/data.js"></script>
-	<script src="src/js/chart.js"></script>
-	<script src="src/js/stock.js"></script>
-	<script src="src/js/index.js"></script>
-
-	<!-- This library enables the automatic resizing of the height and width of
+<!-- samples js -->
+<script src="src/js/austria.js"></script>
+<script src="src/js/ixic-daily-short.js"></script>
+<script src="src/js/data.js"></script>
+<script src="src/js/chart.js"></script>
+<script src="src/js/stock.js"></script>
+<script src="src/js/index.js"></script>
+<!-- This library enables the automatic resizing of the height and width of
 both same and cross domain iFrames to fit their contained content.   -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
 </body>
-
 </html>
