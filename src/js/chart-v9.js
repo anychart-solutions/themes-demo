@@ -2,6 +2,10 @@
 // create_<x>(palette) returns an undrawn chart; index.js puts it on a stage.
 // One small dataset per family; palette applied only where the type has one.
 
+// The Contrast theme ships only a palette and has no anychart.palettes entry, so the
+// Palette dropdown (which overrides the theme palette) gets one built from the theme.
+anychart.palettes.contrast = anychart.themes.contrast.palette.items;
+
 function v9_palette(chart, palette) {
     if (palette && typeof chart.palette === 'function') chart.palette(palette);
     return chart;
