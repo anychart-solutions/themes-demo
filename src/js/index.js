@@ -86,6 +86,10 @@ function updateCharts(palette, chartTypes, seriesCount) {
         chart1 = create_bubble_markers_map(palette).container(stage1).draw();
         chart2 = create_connector_map(palette).container(stage2).draw();
     }
+    else if (v9Panels[chartTypes]) {
+        chart1 = v9Panels[chartTypes][0](palette).container(stage1).draw();
+        chart2 = v9Panels[chartTypes][1](palette).container(stage2).draw();
+    }
     else {
         showStockCharts(true);
         if (chartTypes == 'stock-line-column') {
@@ -157,8 +161,8 @@ $(function () {
 
         if (palette != currentPalette) {
             if (!isStock && !$chartType.find('option:selected').attr('data-palette')) {
-                chart1.palette(palette);
-                chart2.palette(palette);
+                if (chart1.palette) chart1.palette(palette);
+                if (chart2.palette) chart2.palette(palette);
             } else {
                 var keys = Object.keys(plots);
                 for (var i = 0; i < keys.length; i++) {
