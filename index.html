@@ -14,15 +14,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <!-- AnyChart UI -->
-  <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css">
-  <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css">
+  <link rel="stylesheet" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css">
+  <link rel="stylesheet" href="https://cdn.anychart.com/releases/staging/fonts/css/anychart-font.min.css">
 
   <!-- Latest compiled and minified CSS Bootstrap Select -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"/>
 
   <!-- css -->
-  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/style.css?v=20261007">
 
   <!-- Include all your css files or styles here as needed -->
 
@@ -56,6 +56,7 @@
         <option value="pastel|pastel">Pastel</option>
         <option value="sea|sea">Sea</option>
         <option value="wines|wines">Wines</option>
+        <option value="contrast|contrast">Contrast</option>
       </select>
     </li>
 
@@ -74,6 +75,7 @@
         <option value="pastel">Pastel</option>
         <option value="sea">Sea</option>
         <option value="wines">Wines</option>
+        <option value="contrast">Contrast</option>
       </select>
     </li>
 
@@ -96,6 +98,9 @@
         <option value="bubbleMarkers-connector">Bubble Markers & Connector Maps</option>
         <option value="stock-line-column">Stock Column & Range Column & Line & Marker</option>
         <option value="stock-ohlc-area">Stock OHLC & Candlestick & Area & Range Area</option>
+        <option value="dependencyWheel-arcDiagram">Dependency Wheel & Arc Diagram</option>
+        <option value="streamGraph-waffle">Stream Graph & Waffle</option>
+        <option value="lollipop-dumbbell">Lollipop & Dumbbell</option>
       </select>
     </li>
   </ul>
@@ -117,34 +122,53 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
 
-<script src="https://cdn.anychart.com/releases/v8/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-base.min.js"></script>
+<!-- v9 modules used by the 8.x panels (base = core + cartesian + pie + gauges) -->
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-pyramid-funnel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-cartesian-3d.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-radar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-polar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-map.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-sparkline.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-bullet.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-heatmap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-treemap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-stock.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-table.min.js"></script>
+<!-- modules for the AnyChart 9 panels (chart-v9.js); lollipop and dumbbell live in base -->
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-dependency-wheel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-arc.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-stream.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-waffle.min.js"></script>
 
 <!-- AnyChart Themes -->
-<script src="https://cdn.anychart.com/releases/v8/themes/light_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/coffee.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/dark_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/dark_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/dark_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/dark_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/dark_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/light_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/light_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/light_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/light_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/monochrome.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/morning.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/pastel.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/sea.min.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/themes/wines.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-light-blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-coffee.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-dark-blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-dark-earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-dark-glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-dark-provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-dark-turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-light-earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-light-glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-light-provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-light-turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-monochrome.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-morning.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-pastel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-sea.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-wines.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-contrast.min.js"></script>
 <!---->
 
 <!-- samples js -->
-<script src="src/js/austria.js"></script>
-<script src="src/js/ixic-daily-short.js"></script>
-<script src="src/js/data.js"></script>
-<script src="src/js/chart.js"></script>
-<script src="src/js/stock.js"></script>
-<script src="src/js/index.js"></script>
+<script src="src/js/austria.js?v=20261007"></script>
+<script src="src/js/ixic-daily-short.js?v=20261007"></script>
+<script src="src/js/data.js?v=20261007"></script>
+<script src="src/js/chart.js?v=20261007"></script>
+<script src="src/js/chart-v9.js?v=20261007"></script>
+<script src="src/js/stock.js?v=20261007"></script>
+<script src="src/js/index.js?v=20261007"></script>
 <!-- This library enables the automatic resizing of the height and width of
 both same and cross domain iFrames to fit their contained content.   -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
