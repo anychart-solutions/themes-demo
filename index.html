@@ -22,7 +22,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"/>
 
   <!-- css -->
-  <link rel="stylesheet" href="src/css/style.css?v=20261007">
+  <link rel="stylesheet" href="src/css/style.css?v=20261012">
 
   <!-- Include all your css files or styles here as needed -->
 
@@ -101,6 +101,17 @@
         <option value="dependencyWheel-arcDiagram">Dependency Wheel & Arc Diagram</option>
         <option value="streamGraph-waffle">Stream Graph & Waffle</option>
         <option value="lollipop-dumbbell">Lollipop & Dumbbell</option>
+        <option value="org-network">Org Chart & Network Graph</option>
+        <option value="sunburst-circlePacking">Sunburst & Circle Packing</option>
+        <option value="sankey-wordTree">Sankey & Word Tree</option>
+        <option value="calendar-timeline">Calendar & Timeline</option>
+        <option value="tagCloud-venn">Tag Cloud & Venn</option>
+        <option value="waterfall-pareto">Waterfall & Pareto</option>
+        <option value="linearGauge-circularGauge">Linear & Circular Gauges</option>
+        <option value="ganttProject-ganttResource">Gantt Project & Gantt Resource</option>
+        <option value="pert-resource">PERT & Resource Chart</option>
+        <option value="mekko-quadrant">Mekko & Quadrant</option>
+        <option value="surface-seatMap">Surface & Seat Map</option>
       </select>
     </li>
   </ul>
@@ -140,6 +151,25 @@
 <script src="https://cdn.anychart.com/releases/staging/js/anychart-arc.min.js"></script>
 <script src="https://cdn.anychart.com/releases/staging/js/anychart-stream.min.js"></script>
 <script src="https://cdn.anychart.com/releases/staging/js/anychart-waffle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-org.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-sankey.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-circle-packing.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-calendar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-sunburst.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-venn.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-tag-cloud.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-wordtree.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-timeline.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-waterfall.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-pareto.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-mekko.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-gantt.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-pert.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-resource.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-linear-gauge.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-circular-gauge.min.js"></script>
+<script src="https://cdn.anychart.com/releases/staging/js/anychart-surface.min.js"></script>
 
 <!-- AnyChart Themes -->
 <script src="https://cdn.anychart.com/releases/staging/js/anychart-theme-light-blue.min.js"></script>
@@ -162,13 +192,24 @@
 <!---->
 
 <!-- samples js -->
-<script src="src/js/austria.js?v=20261007"></script>
-<script src="src/js/ixic-daily-short.js?v=20261007"></script>
-<script src="src/js/data.js?v=20261007"></script>
-<script src="src/js/chart.js?v=20261007"></script>
-<script src="src/js/chart-v9.js?v=20261007"></script>
-<script src="src/js/stock.js?v=20261007"></script>
-<script src="src/js/index.js?v=20261007"></script>
+<script src="src/js/austria.js?v=20261012"></script>
+<script src="src/js/ixic-daily-short.js?v=20261012"></script>
+<script src="src/js/data.js?v=20261012"></script>
+<script src="src/js/chart.js?v=20261012"></script>
+<script src="src/js/chart-v9.js?v=20261012"></script>
+<script src="src/js/pairs/org-network.js?v=20261012"></script>
+<script src="src/js/pairs/sunburst-circlePacking.js?v=20261012"></script>
+<script src="src/js/pairs/sankey-wordTree.js?v=20261012"></script>
+<script src="src/js/pairs/calendar-timeline.js?v=20261012"></script>
+<script src="src/js/pairs/tagCloud-venn.js?v=20261012"></script>
+<script src="src/js/pairs/waterfall-pareto.js?v=20261012"></script>
+<script src="src/js/pairs/linearGauge-circularGauge.js?v=20261012"></script>
+<script src="src/js/pairs/ganttProject-ganttResource.js?v=20261012"></script>
+<script src="src/js/pairs/pert-resource.js?v=20261012"></script>
+<script src="src/js/pairs/mekko-quadrant.js?v=20261012"></script>
+<script src="src/js/pairs/surface-seatMap.js?v=20261012"></script>
+<script src="src/js/stock.js?v=20261012"></script>
+<script src="src/js/index.js?v=20261012"></script>
 <!-- This library enables the automatic resizing of the height and width of
 both same and cross domain iFrames to fit their contained content.   -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
