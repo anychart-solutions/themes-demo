@@ -16,6 +16,10 @@ function create_calendar_chart(palette) {
     }
     var chart = anychart.calendar(data);
     chart.title('ACME repository, commits per day');
+    // A9-967: at the width of the site embed the 40 px year title clips and the 13 px weekday letters overlap,
+    // so the year title is off and the letters are five points smaller (Nick, 2026-10-16)
+    chart.years().title(false);
+    chart.weeks().labels().fontSize(8);
     return v9_palette(chart, palette);
 }
 

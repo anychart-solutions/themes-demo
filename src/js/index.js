@@ -103,16 +103,9 @@ function updateCharts(palette, chartTypes, seriesCount) {
     }
 }
 function update() {
-    var chartWithOutPalette = ['treemap', 'heatmap', 'bullet', 'sparkline'];
-
+    // A9-967: the Palette dropdown is enabled on every panel; chart types without a palette simply ignore it.
     var $paletteSelect = $('#palettes-select');
     var $chartTypes = $('#chart-types-select');
-
-    if ($chartTypes.find('option:selected').attr('data-palette')) {
-        $paletteSelect.attr('disabled', 'disabled').selectpicker('refresh');
-    } else {
-        $paletteSelect.removeAttr('disabled').selectpicker('refresh');
-    }
 
     var theme = $('#themes-select').val().split('|')[0];
     var chartTypes = $chartTypes.val();
@@ -127,15 +120,6 @@ function update() {
         disposeCharts();
         anychart.theme(theme);
         updateCharts(palette, chartTypes, seriesCount);
-    }
-
-    for (var i = 0; i < chartWithOutPalette.length; i++) {
-        if (chartTypes.indexOf(chartWithOutPalette[i]) != -1) {
-            $paletteSelect.attr('disabled', true).selectpicker('refresh');
-            break;
-        } else {
-            $paletteSelect.removeAttr('disabled').selectpicker('refresh');
-        }
     }
 }
 
@@ -160,7 +144,7 @@ $(function () {
         var $chartType = $('#chart-types-select');
 
         if (palette != currentPalette) {
-            if (!isStock && !$chartType.find('option:selected').attr('data-palette')) {
+            if (!isStock) {
                 if (chart1.palette) chart1.palette(palette);
                 if (chart2.palette) chart2.palette(palette);
             } else {
